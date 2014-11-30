@@ -1,0 +1,89 @@
+body {
+	background-color: AntiqueWhite;
+}
+h1 {
+	text-align: center;
+	color: #191970;
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
+	font-family: verdana;
+}
+
+h2 {
+	color: black;
+	font-family: verdana;
+	padding: 5px;
+}
+
+ul {
+	list-style: none;
+	text-align: center;
+
+}
+
+li {
+	display: inline;
+	border-left-style: solid;
+	border-left-color: black;
+	border-left-width: thin;
+	padding: 5px;
+}
+
+#content {
+	text-align: center;
+}
+
+a:active {
+	color: blue
+}
+
+a:visited {
+	color: purple;
+}
+
+a:hover {
+	color: red;
+}
+
+table {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}
+
+#table_holder{
+	width:100%;
+}
+
+#school_table{
+	margin: 0 auto;
+}
+
+caption {
+	font-weight: bold;
+	font-family: verdana;
+	font-size: 14;
+}
+
+th {
+	border-style: solid;
+	border-color: white;
+	border-width: thin;
+	
+}
+
+td {
+	background-color: rgb(200, 255, 255);
+	padding: 5px;
+}
+
+h2 {
+	text-align: center;
+	font-family: verdana;
+}
+
+p {
+	text-align: center;
+	font-family: verdana;
+}

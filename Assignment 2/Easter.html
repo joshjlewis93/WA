@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html lang=”en”>
+  <head>
+    <title>Easter Day</title>
+    <meta charset=”utf-8” />
+    <link rel="stylesheet" type="text/css" href="css/easter.css">
+  </head>
+	<body>
+    <header>
+  	<h1>Find what day Easter will be!</h1>
+    </header>
+    <div id="wrapper">
+      <form id="form" action="cgi-bin/easter.py">
+        <label for="theYear">Enter a year and return format:</label>
+        <input type="text" id="theYear" name="theYear" /> <br />
+        <input type="radio" name="outputType" id="ddmmyy" value ="ddmmyy" checked="checked"> DD/MM/YYYY <br>
+        <input type="radio" name="outputType" id="dd_month_yyyy" value ="dd_month_yyyy"> Day Month Year <br>
+        <input type="radio" name="outputType" id="Both" value ="Both"> Both <br>
+        <input type="submit" value="submit" />
+      </form>
+    <div id="content">
+      <p> This site will calculate the day that Easter will fall on the year of your choosing. Look to the form on the left to get started!</p>
+    </div>
+    </div>    
+	</body>
+</html>

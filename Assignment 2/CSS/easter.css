@@ -1,0 +1,33 @@
+body {
+	background-color: AntiqueWhite;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	text-align: center;
+	color: #191970;
+	font-family: verdana;
+}
+
+h2 {
+	color: black;
+	font-family: verdana;
+}
+
+#form {
+	width: 20em;
+	float: left;
+	border: solid black 2px;
+	padding: 0;
+}
+#content {
+	padding: 0;
+	margin-left: 21em;
+	border: solid black 2px;
+	min-width: 10em;;
+}
+
+p {
+	text-align: center;
+	font-family: verdana;
+}
