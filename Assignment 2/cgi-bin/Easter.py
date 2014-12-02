@@ -29,44 +29,63 @@ month_number = "0" + str(month)
 month_text = months[month-3]
 year = Easter(user_year)[2]
 
-print ("Content-Type: text/html; charset=utf-8")
-print ("")
-print ("<!DOCTYPE html >")
-print ("<html lang=”en”>")
-print ("<head>")
-print ("<title>Easter Day</title>")
-print ("<meta charset=”utf-8” />")
-print ("<link rel="stylesheet" type="text/css" href="css/Easter.css">")
-print ("</head>")
-print ("<body>")
-print ("<header>")
-print ("<h1>Find what day Easter will be!</h1>")
-print ("</header>")
-print ("<div id="wrapper">")
-print ("<form id="form" method="POST" action="cgi-bin/Easter.py">")
-print ("<label for="theYear">Enter a year and return format:</label>")
-print ("<input type="text" id="theYear" name="theYear" /> <br />")
-print ("<input type="radio" name="outputType" id="ddmmyy" value ="ddmmyy" checked="checked"> DD/MM/YYYY <br>")
-print ("<input type="radio" name="outputType" id="dd_month_yyyy" value ="dd_month_yyyy"> Day Month Year <br>")
-print ("<input type="radio" name="outputType" id="Both" value ="Both"> Both <br>")
-print ("<input type="submit" value="submit" />")
-print ("</form>")
-print ("<div id="content">")
-print("<p> You chose the year: </p>")
-print("<br>")
-print ("<p>"+ user_year + "</p>")
-print ("<p>Easter falls on:</p>")
+print ("Content-type: text/html")
+print ("""
+<html lang=”en”>
+  <head>
+    <title>Easter Day</title>
+    <meta charset=”utf-8” />
+    <link rel="stylesheet" type="text/css" href="css/easter.css">
+  </head>
+    <body>
+    <header>
+    <h1>Find what day Easter will be!</h1>
+    </header>
+    <div id="wrapper">
+      <form id="form" action="cgi-bin/easter.py">
+        <label for="theYear">Enter a year and return format:</label>
+        <input type="text" id="theYear" name="theYear" /> <br />
+        <input type="radio" name="outputType" id="ddmmyy" value ="ddmmyy" checked="checked"> DD/MM/YYYY <br>
+        <input type="radio" name="outputType" id="dd_month_yyyy" value ="dd_month_yyyy"> Day Month Year <br>
+        <input type="radio" name="outputType" id="Both" value ="Both"> Both <br>
+        <input type="submit" value="submit" />
+      </form>
+""")
 if form.getValue("outputType") == "ddmmyy":
-	print("<p>" + day + "/" + month_number + "/" + year + "</p>"
-elif form.getValue("outputType") == "dd_month_yyyy":
-	print("<p>" + day + "<sup>" + supday + "</sup>" + " " + month_text + " " + year + "</p>"
-elif form.getValue("outputType") == "Both":
-	print("<p>" + day + "/" + month_number + "/" + year + "</p>"
-	print("<br>")
-	print("<p> or </p>")
-	print("<br>")
-	print("<p>" + day + "<sup>" + supday + "</sup>" + " " + month_text + " " + year + "</p>"
-print ("</div>")
-print ("</div>")       
-print ("</body>")
-print ("</html>")
+    print ("<div id="content">")
+    print ("<p> You chose the year: <br>")
+    print (user_year + "<br>")
+    print ("Easter falls on: <br>")
+    print (day + "/" + month_number + "/" + year + "</p>")
+    print ("""
+    </div>
+    </div>    
+    </body>
+</html>)
+"""
+if form.getValue("outputType") == "dd_month_yyyy":
+    print ("<div id="content">")
+    print ("<p> You chose the year: <br>")
+    print (user_year + "<br>")
+    print ("Easter falls on: <br>")
+    print (day + supday + " " + month_text + " " + year + "</p>")
+    print ("""
+    </div>
+    </div>    
+    </body>
+</html>)
+"""
+if form.getValue("outputType") == "Both":
+    print ("<div id="content">")
+    print ("<p> You chose the year: <br>")
+    print (user_year + "<br>")
+    print ("Easter falls on: <br>")
+    print (day + supday + " " + month_text + " " + year + "<br>")
+    print ("OR: <br>")
+    print (day + supday + " " + month_text + " " + year + "</p>")
+    print ("""
+    </div>
+    </div>    
+    </body>
+</html>)
+"""
